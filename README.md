@@ -1,32 +1,61 @@
-# FUTURE_CS_02
-# Phishing Email Detection & Awareness System (CS-Task-02)
+# 🎣 Phishing Email Detection & Awareness System (CS-Task-02)
 
 ## 📌 Project Overview
-This project focuses on identifying, analyzing, and documenting phishing email threats. As part of my Cybersecurity Internship at **Future Interns**, I have developed this system to demonstrate technical proficiency in email threat intelligence, header analysis, and risk communication.
+This project focuses on identifying, analyzing, and mitigating phishing email threats. Developed as part of the Cybersecurity Internship at **Future Interns**, this repository demonstrates technical proficiency in email threat intelligence, header analysis, and corporate risk communication. 
 
-The goal is to bridge the gap between technical detection and user awareness by providing a comprehensive "Phishing Detection & Awareness Report."
-
-## 🛠 Tools & Technologies Used
-* **Analysis Tools:** MXToolbox (Header Analysis), VirusTotal (URL/Attachment Scanning), Who.is (Domain Intelligence).
-* **Documentation:** Microsoft Word / Google Docs (Converted to PDF).
-* **Methodology:** NIST Cybersecurity Framework (Detection & Protection).
-
-## 🚀 Key Features
-- **Phishing Indicator Identification:** Detailed breakdown of spoofed senders, typosquatting domains, and malicious hidden links.
-- **Email Classification:** Categorizing emails into **Safe**, **Suspicious**, or **Phishing** based on forensic evidence.
-- **Technical Analysis:** Deep dive into email headers (SPF, DKIM, DMARC) to verify authenticity.
-- **Security Awareness:** Business-friendly explanations and prevention guidelines for non-technical users.
-
-## 📂 Deliverables
-The repository contains:
-1.  **Phishing_Analysis_Report.pdf:** A professional report including real-world phishing examples and analysis.
-2.  **Detection_Guidelines:** A set of best practices to prevent credential harvesting and social engineering attacks.
-
-## 🛡 Skills Gained
-* Phishing Detection & Email Forensic Analysis.
-* Threat Intelligence & Risk Assessment.
-* Client-Ready Technical Documentation.
-* Security Awareness Building & Communication.
+The primary objective is to bridge the gap between technical forensic detection and end-user security awareness by providing a comprehensive, client-ready **Phishing Detection & Awareness Report**.
 
 ---
-*Developed by Nader Abdelgelil | Cybersecurity Intern @ Future Interns*
+
+## 🔍 Case Study: The "PayPal" Phishing Campaign
+To demonstrate the analysis process, a real-world phishing simulation impersonating **PayPal** was utilized. The analysis was broken down into a structured incident response workflow:
+
+### 🛠 Step-by-Step Analysis Methodology
+
+1. **Visual & Heuristic Inspection:** * Analyzed the email for Social Engineering tactics (e.g., manufactured urgency: *"You have 24 hours..."*).
+   * Identified Brand Hijacking and Display Name Spoofing (`services@paypal-accounts.com` instead of the legitimate `@paypal.com`).
+2. **Payload & URL Analysis:** * Extracted the hidden URL behind the Call-to-Action (CTA) button.
+   * Scanned the endpoint to identify credential-harvesting portals and discussed **Zero-Day Evasion** tactics when scanners initially return false negatives.
+3. **Forensic Header Analysis:** * Extracted the raw email headers to trace the true origin.
+   * Analyzed routing data to prove a mismatch between the `From` address and the actual `Return-Path` IP address.
+4. **Risk Communication:** * Translated complex technical findings into actionable, business-friendly prevention guidelines for employees.
+
+---
+
+## 🧰 Tools & Technologies Used
+
+| Tool / Technology | Purpose | Application in this Project |
+| :--- | :--- | :--- |
+| **MXToolbox** | Email Header Forensics | Tracing source IPs and verifying SPF/DKIM/DMARC authentication failures. |
+| **VirusTotal** | URL & Payload Scanning | Inspecting embedded links for malicious redirects and zero-day threats. |
+| **Browser DevTools** | Link Extraction | Safely hovering and extracting underlying URIs without executing the payload. |
+| **PDF Reporting** | Corporate Documentation | Structuring technical findings into a client-ready executive summary. |
+
+---
+
+## 📊 Email Threat Classification Framework
+
+As part of the awareness system, incoming communications were classified using the following standard:
+
+| Risk Level | Technical Indicators | Required Action |
+| :--- | :--- | :--- |
+| ✅ **Safe** | Verified SPF/DKIM, legitimate domain, expected content. | Normal interaction. |
+| ⚠️ **Suspicious** | External sender, generic greeting, unusual attachment. | Verify identity via secondary channel (e.g., phone). |
+| 🚨 **Phishing** | Spoofed IP, urgent threats, malicious Call-to-Action links. | **Report to IT/SOC immediately & Delete.** |
+
+---
+
+## 📂 Project Deliverables
+
+* 📄 **`Phishing_Analysis_Report.pdf`**: The finalized, professional report containing the complete breakdown of the PayPal phishing simulation, technical proofs (screenshots), and security guidelines.
+
+---
+
+## 🛡 Skills Demonstrated
+* **Threat Intelligence:** Identifying Indicators of Compromise (IOCs) and Typosquatting.
+* **Forensic Analysis:** Deep-diving into email metadata and authentication protocols.
+* **Vulnerability Management:** Understanding scanner bypass techniques (Evasion).
+* **Security Awareness:** Drafting clear, non-technical prevention protocols for enterprise users.
+
+---
+*Developed by **Nader Abdelgelil** | Cybersecurity Intern @ Future Interns*
