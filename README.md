@@ -61,6 +61,11 @@ As part of the awareness system, incoming communications were classified using t
 * **Forensic Analysis:** Deep-diving into email metadata and authentication protocols.
 * **Vulnerability Management:** Understanding scanner bypass techniques (Evasion).
 * **Security Awareness:** Drafting clear, non-technical prevention protocols for enterprise users.
+## 📁 Repository Structure
 
+```text
+├── Phishing_Analysis_Report.pdf   # The main deliverable and executive summary
+├── images/                        # Screenshots of headers, payload links, and analysis
+└── README.md                      # This documentation file
 ---
 *Developed by **Nader Abdelgelil** | Cybersecurity Intern @ Future Interns*
