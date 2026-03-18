@@ -1,24 +1,66 @@
-# 🕵️‍♂️ Threat Intel & Forensic PDF Analyzer
+# 🎣 Phishing Email Detection & Awareness System (CS-Task-02)
 
-![Python](https://img.shields.io/badge/Python-3.x-blue.svg)
-![Cybersecurity](https://img.shields.io/badge/Cybersecurity-Forensics-red.svg)
-![Status](https://img.shields.io/badge/Status-Active-success.svg)
+![Cybersecurity](https://img.shields.io/badge/Domain-Cybersecurity-red.svg)
+![Threat Intel](https://img.shields.io/badge/Skill-Threat%20Intelligence-blue.svg)
+![Forensics](https://img.shields.io/badge/Skill-Email%20Forensics-blueviolet.svg)
+![Status](https://img.shields.io/badge/Status-Completed-success.svg)
 
-## 📖 Overview
-A lightweight, high-efficiency Python tool designed for Security Operations Center (SOC) analysts and threat hunters. This script automates the parsing of threat intelligence reports—specifically targeting `Phase 1 Threat Intelligence & Forensic Analysis.pdf`—to extract critical Indicators of Compromise (IoCs) without relying on bloated or complex frameworks. 
+## 📌 Project Overview
+This project focuses on identifying, analyzing, and mitigating phishing email threats. Developed as part of the Cybersecurity Internship at **Future Interns**, this repository demonstrates technical proficiency in email threat intelligence, header analysis, and corporate risk communication. 
 
-## ✨ Key Features
-* **Automated IoC Extraction:** Instantly parses PDF text to identify and pull IPv4 addresses, MD5, and SHA-256 hashes.
-* **Smart Deduplication:** Utilizes native Python sets to filter out redundant data, ensuring each unique IoC is only reported once, optimizing analysis time.
-* **Regex-Powered Accuracy:** Employs precise Regular Expressions (`re`) to guarantee exact pattern matching for forensic artifacts.
-* **Lightweight Architecture:** Requires only standard Python libraries and `PyPDF2` for minimal resource overhead.
+The primary objective is to bridge the gap between technical forensic detection and end-user security awareness by providing a comprehensive, client-ready **Phishing Detection & Awareness Report**.
 
-## ⚙️ Prerequisites & Installation
+---
 
-To run this tool, you will need Python 3.x installed on your system.
+## 🔍 Case Study: The "PayPal" Phishing Campaign
+To demonstrate the analysis process, a real-world phishing simulation impersonating **PayPal** was utilized. The analysis was broken down into a structured incident response workflow:
 
-1. Clone or download this repository to your local machine.
-2. Install the required PDF parsing dependency using pip:
+### 🛠 Step-by-Step Analysis Methodology
 
-```bash
-pip install PyPDF2
+1. **Visual & Heuristic Inspection:** * Analyzed the email for Social Engineering tactics (e.g., manufactured urgency: *"You have 24 hours..."*).
+   * Identified Brand Hijacking and Display Name Spoofing (`services@paypal-accounts.com` instead of the legitimate `@paypal.com`).
+2. **Payload & URL Analysis:** * Extracted the hidden URL behind the Call-to-Action (CTA) button.
+   * Scanned the endpoint to identify credential-harvesting portals and discussed **Zero-Day Evasion** tactics when scanners initially return false negatives.
+3. **Forensic Header Analysis:** * Extracted the raw email headers to trace the true origin.
+   * Analyzed routing data to prove a mismatch between the `From` address and the actual `Return-Path` IP address.
+4. **Risk Communication:** * Translated complex technical findings into actionable, business-friendly prevention guidelines for employees.
+
+---
+
+## 🧰 Tools & Technologies Used
+
+| Tool / Technology | Purpose | Application in this Project |
+| :--- | :--- | :--- |
+| **MXToolbox** | Email Header Forensics | Tracing source IPs and verifying SPF/DKIM/DMARC authentication failures. |
+| **VirusTotal** | URL & Payload Scanning | Inspecting embedded links for malicious redirects and zero-day threats. |
+| **Browser DevTools** | Link Extraction | Safely hovering and extracting underlying URIs without executing the payload. |
+| **PDF Reporting** | Corporate Documentation | Structuring technical findings into a client-ready executive summary. |
+
+---
+
+## 📊 Email Threat Classification Framework
+
+As part of the awareness system, incoming communications were classified using the following standard:
+
+| Risk Level | Technical Indicators | Required Action |
+| :--- | :--- | :--- |
+| ✅ **Safe** | Verified SPF/DKIM, legitimate domain, expected content. | Normal interaction. |
+| ⚠️ **Suspicious** | External sender, generic greeting, unusual attachment. | Verify identity via secondary channel (e.g., phone). |
+| 🚨 **Phishing** | Spoofed IP, urgent threats, malicious Call-to-Action links. | **Report to IT/SOC immediately & Delete.** |
+
+---
+
+## 📂 Project Deliverables
+
+* 📄 **`Phishing_Analysis_Report.pdf`**: The finalized, professional report containing the complete breakdown of the PayPal phishing simulation, technical proofs (screenshots), and security guidelines.
+
+---
+
+## 🛡 Skills Demonstrated
+* **Threat Intelligence:** Identifying Indicators of Compromise (IOCs) and Typosquatting.
+* **Forensic Analysis:** Deep-diving into email metadata and authentication protocols.
+* **Vulnerability Management:** Understanding scanner bypass techniques (Evasion).
+* **Security Awareness:** Drafting clear, non-technical prevention protocols for enterprise users.
+
+---
+*Developed by **Nader Abdelgelil** | Cybersecurity Intern @ Future Interns*
